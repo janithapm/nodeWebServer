@@ -40,9 +40,17 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
+
+    if (!req.query.address){
+        return res.send({
+                error : "you must provide an address",
+                responseCode:400
+            })
+    }
+
     res.send({
-        forecast: 'It is snowing',
-        location: 'Philadelphia'
+        address: req.query.address.toString(),
+        responseCode :200
     })
 })
 
