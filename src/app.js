@@ -66,18 +66,13 @@ app.get('/weather', (req, res) => {
                     responseCode:404
                 })
             }
-
             return res.send({
                 responseCode: 200 ,
                 response,
                 location,
                 address
             })
-
-
         })
-
-
     })
 })
 
